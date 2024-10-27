@@ -12,11 +12,12 @@ $result = $conn->query($sql);
     <title>User Management</title>
 </head>
 <body>
-    <h1>Users</h1>
+    <h1>Game</h1>
     <a href="create.php">Add New User</a>
-    <table border="1">
+    <table border="2">
         <tr>
             <th>ID</th>
+            <th>Name</th>
             <th>Genre</th>
             <th>date</th>
             
@@ -24,8 +25,10 @@ $result = $conn->query($sql);
         <?php while($row = $result->fetch_assoc()): ?>
         <tr>
             <td><?php echo $row['id']; ?></td>
+            <td><?php echo $row['name']; ?></td>
             <td><?php echo $row['genre']; ?></td>
             <td><?php echo $row['date']; ?></td>
+        
 
                 <a href="update.php?id=<?php echo $row['id']; ?>">Edit</a>
                 <a href="delete.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure?');">Delete</a>

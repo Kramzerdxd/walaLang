@@ -1,7 +1,12 @@
 <?php
-$link = mysqli_connect("localhost", "root", "", "game");
- 
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "database";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 ?>
